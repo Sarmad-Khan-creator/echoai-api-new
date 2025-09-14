@@ -21,11 +21,11 @@ langchain-text-splitters>=0.0.1
 langchain-core>=0.1.0
 
 # Hugging Face models and transformers
-transformers>=4.36.0
-sentence-transformers>=2.2.0
-accelerate>=0.25.0
-bitsandbytes>=0.41.0
-huggingface-hub>=0.20.0
+# transformers>=4.36.0
+# sentence-transformers>=2.2.0
+# accelerate>=0.25.0
+# bitsandbytes>=0.41.0
+# huggingface-hub>=0.20.0
 
 # Hugging Face Inference API client
 huggingface-hub[inference]>=0.20.0

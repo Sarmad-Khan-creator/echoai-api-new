@@ -38,5 +38,8 @@ COPY . .
 # Expose port
 EXPOSE 8000
 
+# Set PYTHONPATH to include the current directory
+ENV PYTHONPATH=/app
+
 # Run FastAPI with Gunicorn + Uvicorn workers
 CMD ["gunicorn", "app.main:app", "-k", "uvicorn.workers.UvicornWorker", "-b", "0.0.0.0:8000", "--workers", "4", "--timeout", "120"]

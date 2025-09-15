@@ -7,9 +7,9 @@ from typing import List, Optional
 from fastapi import APIRouter, HTTPException, UploadFile, File, Form, status
 from pydantic import ValidationError
 
-from app.models.ingest import IngestRequest, IngestResponse, ProcessingStats, VectorStorageStats
 from app.services.document_ingestion_service import get_document_ingestion_service
 from app.services.vector_storage_service import get_vector_storage_service
+from app.models.ingest import IngestRequest, IngestResponse, ProcessingStats, VectorStorageStats
 
 logger = logging.getLogger(__name__)
 

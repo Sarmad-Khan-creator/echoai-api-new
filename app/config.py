@@ -15,6 +15,8 @@ class Settings(BaseSettings):
     SUPABASE_KEY: str = os.getenv("SUPABASE_KEY", "")
     
     # CORS configuration
+    # Default permissive set for local dev + production frontend.
+    # Override in production with env var ALLOWED_ORIGINS (JSON array recommended).
     ALLOWED_ORIGINS: List[str] = [
         "http://localhost:3000",
         "http://127.0.0.1:3000",
@@ -28,7 +30,9 @@ class Settings(BaseSettings):
     ]
     
     # Security configuration
-    TRUSTED_HOSTS: Optional[List[str]] = ["localhost", "127.0.0.1", "192.168.1.10", "192.168.1.3", "192.168.38.157", "192.168.1.4", "192.168.1.2", "echoai-pi.vercel.app"]
+    # IMPORTANT: Leave unset by default so TrustedHostMiddleware is disabled unless explicitly configured.
+    # Set env var TRUSTED_HOSTS to a JSON array (e.g., ["api.example.com", "localhost"]) to enable.
+    TRUSTED_HOSTS: Optional[List[str]] = None
     
     # Logging configuration
     LOG_LEVEL: str = os.getenv("LOG_LEVEL", "INFO")

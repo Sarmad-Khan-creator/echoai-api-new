@@ -23,11 +23,12 @@ class Settings(BaseSettings):
         "http://192.168.1.3:3000",
         "http://192.168.38.157:3000",
         "http://192.168.1.4:3000",
-        "http://192.168.1.2:3000"
+        "http://192.168.1.2:3000",
+        "https://echoai-pi.vercel.app"
     ]
     
     # Security configuration
-    TRUSTED_HOSTS: Optional[List[str]] = ["localhost", "127.0.0.1", "192.168.1.10", "192.168.1.3", "192.168.38.157", "192.168.1.4", "192.168.1.2"]
+    TRUSTED_HOSTS: Optional[List[str]] = ["localhost", "127.0.0.1", "192.168.1.10", "192.168.1.3", "192.168.38.157", "192.168.1.4", "192.168.1.2", "echoai-pi.vercel.app"]
     
     # Logging configuration
     LOG_LEVEL: str = os.getenv("LOG_LEVEL", "INFO")
